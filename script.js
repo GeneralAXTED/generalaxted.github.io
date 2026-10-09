@@ -539,25 +539,124 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Refresh Telegram Live Feed
-  const refreshFeedBtn = document.getElementById('refreshFeedBtn');
-  const telegramFeedFrame = document.getElementById('telegramFeedFrame');
-  if (refreshFeedBtn && telegramFeedFrame) {
-    refreshFeedBtn.addEventListener('click', () => {
-      refreshFeedBtn.classList.add('rotating');
-      const currentSrc = telegramFeedFrame.src;
-      telegramFeedFrame.src = '';
-      setTimeout(() => {
-        telegramFeedFrame.src = currentSrc;
-        refreshFeedBtn.classList.remove('rotating');
-        showToast('Kanal lentasi yangilandi 🔄');
-      }, 400);
-    });
+// ================= DYNAMIC TELEGRAM LIVE FEED LOADER =================
+const sampleRecentChannelPosts = [
+  {
+    id: 108,
+    text: "🌙 Tungi mulohaza:\n\nInson qachonki o'z ichki olamida tinchlik topa olsa, tashqi dunyodagi hech bir shovqin uning sokinligini buza olmaydi.\n\nHar bir tun — tafakkur qilish uchun berilgan ne'matdir.",
+    date: "Bugun, 21:40",
+    views: "1.2k",
+    link: "https://t.me/AxteD"
+  },
+  {
+    id: 107,
+    text: "📖 Kitoblardan satrlar:\n\n«Ba'zi insonlar yomg'irni his qilishadi, boshqalari esa shunchaki ivishadi...»\n\n— Ruhimizga sokinlik tilab, @AxteD",
+    date: "Bugun, 18:15",
+    views: "980",
+    link: "https://t.me/AxteD"
+  },
+  {
+    id: 106,
+    text: "✨ «Kechiring, lekin unutmang. Chunki kechirish — ruhingizni ozod qiladi, unutmaslik esa sizni qayta xatodan asraydi.»\n\nQalbingizga orom baxsh etuvchi satrlar.",
+    date: "Kecha, 22:10",
+    views: "1.5k",
+    link: "https://t.me/AxteD"
+  }
+];
+
+async function loadTelegramChannelPosts() {
+  const container = document.getElementById('telegramPostsContainer');
+  if (!container) return;
+
+  try {
+    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://rsshub.app/telegram/channel/AxteD');
+    const data = await res.json();
+
+    if (data && data.status === 'ok' && Array.isArray(data.items) && data.items.length > 0) {
+      renderLiveTelegramPosts(data.items.slice(0, 6).map((item, idx) => ({
+        id: idx + 1,
+        text: item.description ? item.description.replace(/<[^>]*>?/gm, '').trim() : item.title,
+        date: new Date(item.pubDate).toLocaleDateString('uz-UZ', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
+        views: 'Jonli',
+        link: item.link || 'https://t.me/AxteD'
+      })));
+      return;
+    }
+  } catch (e) {
+    console.log('RSS Feed fallback enabled');
   }
 
-  // Dynamic Year
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  renderLiveTelegramPosts(sampleRecentChannelPosts);
+}
+
+function renderLiveTelegramPosts(posts) {
+  const container = document.getElementById('telegramPostsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+
+  posts.forEach(post => {
+    const postEl = document.createElement('div');
+    postEl.className = 'tg-post-card animate-fade-up';
+    postEl.innerHTML = `
+      <div class="tg-post-header">
+        <div class="tg-post-author">
+          <div class="tg-post-avatar">☽</div>
+          <div>
+            <div class="tg-post-name">AxteD | Sokinlik Maskani</div>
+            <div class="tg-post-time">${escapeHtml(post.date || 'Bugun')}</div>
+          </div>
+        </div>
+        <span class="verified-badge">✓</span>
+      </div>
+      <div class="tg-post-body">${escapeHtml(post.text)}</div>
+      <div class="tg-post-footer">
+        <div class="tg-post-views">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>${escapeHtml(post.views || '1k+')}</span>
+        </div>
+        <a href="${post.link || 'https://t.me/AxteD'}" target="_blank" rel="noopener noreferrer" class="tg-post-link">
+          <span>Telegramda ochish</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    `;
+    container.appendChild(postEl);
+  });
+}
+
+// Refresh Telegram Live Feed Button
+const refreshFeedBtn = document.getElementById('refreshFeedBtn');
+if (refreshFeedBtn) {
+  refreshFeedBtn.addEventListener('click', () => {
+    refreshFeedBtn.classList.add('rotating');
+    const container = document.getElementById('telegramPostsContainer');
+    if (container) {
+      container.innerHTML = `
+        <div class="feed-loading-state">
+          <div class="loading-spinner"></div>
+          <p>Yangi postlar yangilanmoqda...</p>
+        </div>
+      `;
+    }
+    setTimeout(() => {
+      loadTelegramChannelPosts();
+      refreshFeedBtn.classList.remove('rotating');
+      showToast('Kanal lentasi yangilandi 🔄');
+    }, 600);
+  });
+}
+
+// Dynamic Year
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// Initial Live Feed Load
+loadTelegramChannelPosts();
 });

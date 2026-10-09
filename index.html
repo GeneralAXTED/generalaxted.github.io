@@ -388,16 +388,12 @@
               </div>
             </div>
 
-            <!-- Telegram Web Preview Frame -->
-            <div class="feed-iframe-wrapper">
-              <iframe 
-                id="telegramFeedFrame" 
-                src="https://t.me/s/AxteD" 
-                title="@AxteD Telegram Jonli Lentasi" 
-                loading="lazy" 
-                frameborder="0" 
-                allowfullscreen>
-              </iframe>
+            <!-- Native Dynamic Telegram Posts Container (No iframe blocking) -->
+            <div class="feed-posts-wrapper" id="telegramPostsContainer">
+              <div class="feed-loading-state" id="feedLoadingState">
+                <div class="loading-spinner"></div>
+                <p>Telegram kanalidan yangi postlar yuklanmoqda...</p>
+              </div>
             </div>
 
             <div class="feed-window-footer">
