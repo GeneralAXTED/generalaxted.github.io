@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= PRIMARY SEO META TAGS ================= -->
+  <title>@AxteD — O'zbekcha Falsafiy Iqtiboslar, Sokinlik va Kitoblardan Satrlar</title>
+  <meta name="title" content="@AxteD — O'zbekcha Falsafiy Iqtiboslar, Sokinlik va Kitoblardan Satrlar">
+  <meta name="description"
+    content="Eng sara o'zbekcha iqtiboslar, falsafiy fikrlar, kitoblardan terma satrlar va qalb sokinligi maskani. @AxteD rasmiy Telegram kanali va blogi.">
+  <meta name="keywords"
+    content="o'zbekcha iqtiboslar, falsafiy kanal, sokinlik, kitoblardan satrlar, aforizmlar, hikmatli so'zlar, AxteD, @AxteD, telegram kanal, adabiyot, falsafa, tafakkur, sokin musiqa, hayotiy iqtiboslar">
+  <meta name="author" content="General Axted (@AxteD)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://generalaxted.github.io/">
+
+  <!-- Google Search Console Verification (O'z kodingizni bu yerga joylashtiring) -->
+  <meta name="google-site-verification" content="GOOGLE_VERIFICATION_CODE_HERE">
+
+  <!-- ================= OPEN GRAPH / FACEBOOK / TELEGRAM ================= -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://generalaxted.github.io/">
+  <meta name="google-site-verification" content="L4tSIXT83eqV0t4cK3DPkxASv97On7Y26DwYqI8mF4o" />
+  <meta property="og:title" content="@AxteD — O'zbekcha Falsafiy Iqtiboslar va Sokinlik">
+  <meta property="og:description"
+    content="Tafakkur qiluvchi qalblar uchun sokin maskan. Kitoblardan satrlar, chuqur ma'noli o'zbekcha iqtiboslar to'plami.">
+  <meta property="og:image" content="https://generalaxted.github.io/preview.png">
+  <meta property="og:site_name" content="@AxteD Sokinlik Maskani">
+  <meta property="og:locale" content="uz_UZ">
+
+  <!-- ================= TWITTER CARD ================= -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://generalaxted.github.io/">
+  <meta name="twitter:title" content="@AxteD — Falsafiy Iqtiboslar va Sokinlik">
+  <meta name="twitter:description"
+    content="O'zbekcha falsafiy iqtiboslar, kitoblardan sara jumlalar va qalb osoyishtaligi.">
+  <meta name="twitter:image" content="https://generalaxted.github.io/preview.png">
+
+  <!-- ================= THEME COLOR & ICONS ================= -->
+  <meta name="theme-color" content="#090b10">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+
+  <!-- ================= GOOGLE FONTS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ================= STRUCTURED DATA (JSON-LD) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://generalaxted.github.io/#website",
+        "url": "https://generalaxted.github.io/",
+        "name": "@AxteD — O'zbekcha Falsafiy Iqtiboslar",
+        "description": "Eng sara o'zbekcha iqtiboslar, falsafiy fikrlar va kitoblardan satrlar maskani",
+        "inLanguage": "uz"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://generalaxted.github.io/#organization",
+        "name": "AxteD Channel",
+        "url": "https://generalaxted.github.io/",
+        "sameAs": [
+          "https://t.me/AxteD"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Eng Sara O'zbekcha Iqtiboslar",
+        "itemListElement": [
+          {
+            "@type": "Quotation",
+            "position": 1,
+            "text": "Sokinlik — bu shovqinning yo'qligi emas, shovqin ichida o'z qalbing ovozini eshita olishingdir.",
+            "author": "AxteD Falsafasi"
+          },
+          {
+            "@type": "Quotation",
+            "position": 2,
+            "text": "Dunyodagi eng qimmat narsa — vaqtida aytilgan rost so'z va vaqtida saqlangan sokinlikdir.",
+            "author": "Kitoblardan Satrlar"
+          },
+          {
+            "@type": "Quotation",
+            "position": 3,
+            "text": "Har bir tunda bir hikmat, har bir yomg'irda bir poklanish yashiringan.",
+            "author": "AxteD"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Ambient Rain & Starfield Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Glowing Moon & Sky Fog Backdrop -->
+  <div class="sky-backdrop">
+    <div class="moon-container" id="moonContainer" title="Oy nuri va sokinlik">
+      <div class="moon-glow"></div>
+      <div class="moon">
+        <div class="crater c1"></div>
+        <div class="crater c2"></div>
+        <div class="crater c3"></div>
+      </div>
+    </div>
+    <div class="ambient-cloud cloud-1"></div>
+    <div class="ambient-cloud cloud-2"></div>
+  </div>
+
+  <!-- Noise / Grain Texture Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Main App Wrapper -->
+  <div class="app-wrapper">
+
+    <!-- Top Navigation / Ambient Bar -->
+    <header class="glass-header">
+      <div class="header-container">
+        <a href="#" class="brand-logo">
+          <span class="moon-icon">☽</span>
+          <span class="brand-name">@AxteD</span>
+          <span class="brand-badge">Rasmiy</span>
+        </a>
+
+        <div class="header-actions">
+          <!-- Audio Ambient Toggle -->
+          <button id="rain-sound-btn" class="audio-toggle" title="Yomg'ir sokin tovushini yoqish/o'chirish"
+            aria-label="Sokin ovozni yoqish">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12 3v18l-5-5H3V8h4l5-5zm5.5 9c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM15 4.07v2.06c3.45.89 6 4.01 6 7.87s-2.55 6.98-6 7.87v2.06c4.57-.96 8-5.06 8-9.93s-3.43-8.97-8-9.93z" />
+            </svg>
+            <svg class="sound-icon-off" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+            </svg>
+            <span class="audio-text">Sokin Yomg'ir</span>
+          </button>
+
+          <!-- Telegram Main Link -->
+          <a href="https://t.me/AxteD" target="_blank" rel="noopener noreferrer" class="btn-telegram-nav">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+            </svg>
+            <span>Kanalga Kirish</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-down">
+            <span class="pulse-dot"></span>
+            <span>O'zbekcha Falsafiy Iqtiboslar & Sokinlik Maskani</span>
+          </div>
+
+          <h1 class="hero-title animate-fade-up">
+            Har bir satrda <span class="text-gradient">hikmat</span>,<br>
+            har bir tunda <span class="text-glow">sokinlik</span>.
+          </h1>
+
+          <p class="hero-subtitle animate-fade-up delay-1">
+            Dunyodagi eng kuchli aforizmlar, kitoblardan sara jumlalar, qalbni davolovchi falsafiy fikrlar va
+            kechinmalar jamlangan rasmiy maydon.
+          </p>
+
+          <!-- Interactive Action Buttons -->
+          <div class="hero-cta-group animate-fade-up delay-2">
+            <a href="https://t.me/AxteD" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+              </svg>
+              <span>Telegram Kanalga Qo'shilish (@AxteD)</span>
+            </a>
+
+            <button id="random-quote-btn" class="btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span>Ixtiyoriy Iqtibos Olish</span>
+            </button>
+          </div>
+
+          <!-- Channel Highlights / Micro-stats -->
+          <div class="channel-stats animate-fade-up delay-3">
+            <div class="stat-card">
+              <span class="stat-number">1,000+</span>
+              <span class="stat-label">Sara Iqtiboslar</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Sokin Atmosfera</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Falsafiy Ruh</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spotlight: Kun Iqtibosi Card -->
+        <div class="spotlight-card animate-fade-up delay-2" id="spotlightCard">
+          <div class="spotlight-header">
+            <div class="spotlight-tag">
+              <span class="star-icon">✦</span> KUN IQTIBOSI
+            </div>
+            <span class="quote-date" id="currentDate">Bugun</span>
+          </div>
+
+          <div class="spotlight-body">
+            <div class="quote-icon">“</div>
+            <blockquote id="dailyQuoteText" class="quote-text">
+              Sokinlik — bu shovqinning yo'qligi emas, shovqin ichida o'z qalbing ovozini eshita olishingdir.
+            </blockquote>
+            <div class="quote-meta">
+              <span id="dailyQuoteAuthor" class="quote-author">— AxteD Falsafasi</span>
+              <span id="dailyQuoteCategory" class="quote-badge">Sokinlik</span>
+            </div>
+          </div>
+
+          <div class="spotlight-footer">
+            <button class="action-pill" id="copyDailyBtn" title="Iqtibosni nusxalash">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Nusxalash</span>
+            </button>
+
+            <button class="action-pill" id="shareTelegramDailyBtn" title="Telegramda ulashish">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+              </svg>
+              <span>Ulashish</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quotes Explorer Section (Search, Filter, Grid) -->
+      <section class="quotes-section" id="quotes-explorer">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span class="title-sub">Kutubxona</span>
+            Eng Sara O'zbekcha Iqtiboslar & Satrlar
+          </h2>
+          <p class="section-desc">
+            Quyidagi to'plamdan o'zingizga ma'naviy ozuqa toping, ijtimoiy tarmoqlarda ulashing yoki saqlab oling.
+          </p>
+        </div>
+
+        <!-- Search & Category Filters -->
+        <div class="filter-controls">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="quote-search-input"
+              placeholder="Iqtibos yoki muallif bo'yicha qidiruv (masalan: Sokinlik, Hayot, Rumi...)"
+              aria-label="Iqtibos qidirish">
+            <button id="clear-search-btn" class="clear-btn" aria-label="Tozalash">&times;</button>
+          </div>
+
+          <div class="category-tabs" id="categoryTabs">
+            <button class="tab-btn active" data-category="all">Barchasi</button>
+            <button class="tab-btn" data-category="sokinlik">Sokinlik</button>
+            <button class="tab-btn" data-category="kitoblardan">Kitoblardan Satrlar</button>
+            <button class="tab-btn" data-category="falsafa">Falsafa & Tafakkur</button>
+            <button class="tab-btn" data-category="hayot">Hayotiy Saboqlar</button>
+            <button class="tab-btn" data-category="ishq">Qalb & Ishq</button>
+          </div>
+        </div>
+
+        <!-- Quotes Grid Container -->
+        <div class="quotes-grid" id="quotesGrid">
+          <!-- Populated dynamically via JS for fast searching/filtering -->
+        </div>
+
+        <!-- Empty Search Fallback -->
+        <div class="no-results hidden" id="noResults">
+          <div class="empty-icon">☽</div>
+          <h3>Mos keluvchi iqtibos topilmadi</h3>
+          <p>Boshqa kalit so'z bilan izlab ko'ring yoki barcha toifalarni ko'ring.</p>
+          <button class="btn-secondary" id="resetFilterBtn">Barcha iqtiboslarni ko'rsatish</button>
+        </div>
+      </section>
+
+      <!-- Why Join @AxteD Section -->
+      <section class="features-section">
+        <div class="section-head">
+          <h2 class="section-title">
+            <span class="title-sub">Kanalimiz haqida</span>
+            Nega aynan @AxteD kanali?
+          </h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📖</div>
+            <h3>Kitoblardan Sara Iqtiboslar</h3>
+            <p>Jahon va o'zbek adabiyotining eng durdona asarlaridan terib olingan teran satrlar.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌧️</div>
+            <h3>Sokinlik va Ruhiy Orom</h3>
+            <p>Kundalik shovqin va tashvishlardan uzoqlashib, o'zligingiz bilan yakkama-yakka suhbat qurish maydoni.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Har Kuni Yangi Fikrlar</h3>
+            <p>Har kuni ertalab va kechqurun sizni mulohazaga chorlovchi originallik va samimiylik.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Reklamasiz, Sof Muhit</h3>
+            <p>Foydasiz xabarlardan xoli, faqatgina ma'no va estetikaga yo'g'rilgan sifatli kontent.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Custom Quote Card Visualizer / Generator -->
+      <section class="card-generator-section">
+        <div class="generator-box">
+          <div class="generator-info">
+            <span class="badge-accent">Maxsus Vizual Kartochka</span>
+            <h2>Iqtibosni Chiroyli Kartaga Aylantiring</h2>
+            <p>O'zingizga yoqqan istalgan iqtibosni tanlang yoki yozing, va uni do'stlaringizga ulashing.</p>
+            <div class="generator-controls">
+              <textarea id="customQuoteInput" rows="3"
+                placeholder="O'z iqtibosingizni yoki fikringizni kiriting...">Yurak faqat o'ziga o'xshash sokinlikda o'zini topadi.</textarea>
+              <input type="text" id="customAuthorInput" placeholder="Muallif (masalan: @AxteD)" value="@AxteD">
+              <button id="copyCustomCardBtn" class="btn-primary">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Matnni Formatlab Nusxalash</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="generator-preview">
+            <div class="aesthetic-preview-card" id="previewCard">
+              <div class="preview-moon">☽</div>
+              <div class="preview-quote-mark">“</div>
+              <p class="preview-text" id="previewQuoteText">Yurak faqat o'ziga o'xshash sokinlikda o'zini topadi.</p>
+              <div class="preview-author-box">
+                <span class="preview-line"></span>
+                <span class="preview-author" id="previewAuthorText">@AxteD</span>
+              </div>
+              <div class="preview-watermark">generalaxted.github.io</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Telegram Channel CTA Banner -->
+      <section class="telegram-banner">
+        <div class="banner-inner">
+          <div class="banner-moon-glow"></div>
+          <h2>Tafakkur qiluvchilar jamoasiga qo'shiling</h2>
+          <p>Har kungi yangi iqtiboslar, audio hikoyalar va estetik fotosuratlar Telegram kanalimizda.</p>
+          <a href="https://t.me/AxteD" target="_blank" rel="noopener noreferrer" class="btn-telegram-large">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+            </svg>
+            <span>@AxteD Kanaliga A'zo Bo'lish</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span>☽</span> @AxteD
+          </div>
+          <p>O'zbekcha falsafiy iqtiboslar, kitoblardan satrlar va qalb sokinligi.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigatsiya</h4>
+            <a href="#quotes-explorer">Iqtiboslar</a>
+            <a href="https://t.me/AxteD" target="_blank" rel="noopener">Telegram Kanal</a>
+            <a href="https://generalaxted.github.io/sitemap.xml">Sitemap.xml</a>
+          </div>
+          <div class="footer-col">
+            <h4>Kalit So'zlar</h4>
+            <span>#o'zbekcha_iqtiboslar</span>
+            <span>#sokinlik</span>
+            <span>#falsafa</span>
+            <span>#kitoblardan_satrlar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> @AxteD. Barcha huquqlar himoyalangan. Sokinlik va tafakkur maskani.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message">Nusxalandi!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>

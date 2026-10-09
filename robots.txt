@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://generalaxted.github.io/sitemap.xml
