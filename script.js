@@ -539,6 +539,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Refresh Telegram Live Feed
+  const refreshFeedBtn = document.getElementById('refreshFeedBtn');
+  const telegramFeedFrame = document.getElementById('telegramFeedFrame');
+  if (refreshFeedBtn && telegramFeedFrame) {
+    refreshFeedBtn.addEventListener('click', () => {
+      refreshFeedBtn.classList.add('rotating');
+      const currentSrc = telegramFeedFrame.src;
+      telegramFeedFrame.src = '';
+      setTimeout(() => {
+        telegramFeedFrame.src = currentSrc;
+        refreshFeedBtn.classList.remove('rotating');
+        showToast('Kanal lentasi yangilandi 🔄');
+      }, 400);
+    });
+  }
+
   // Dynamic Year
   const yearEl = document.getElementById('year');
   if (yearEl) {
